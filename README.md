@@ -24,7 +24,7 @@ This project is a **Football Match Simulator** built in Swift using **Xcode Play
 - **Displays the current score** after each goal.
 - **Goal celebration animation** with emojis.
 - **Yellow and red card display** for fouls.
-- **Real-time event simulation** with a delay for a realistic match experience.
+- **Real-time event simulation** with a delay.
 
 ### What I Learned from the Project:
 - How to structure and organize a Swift project.
