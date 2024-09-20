@@ -1,7 +1,4 @@
-# molab-2024-09-Asgar
-
-
-# Football Match Simulation in Swift
+# Week 1 - Football Match Simulation in Swift
 
 ## Overview
 
@@ -32,3 +29,24 @@ This project is a **Football Match Simulator** built in Swift using **Xcode Play
 - Using emojis to create fun animations within the console.
 - Applying Swift functions with parameters to simulate complex events.
 - Understanding how to push and organize projects on GitHub.
+
+
+# Week 2 - Football ASCII Image Display
+
+## Overview
+
+This week, I spent around **3 hours** continuing to learn **Swift**. I built upon the foundational knowledge I gained in Week 1 and applied it to a new project. This project focused on loading and displaying images created using ASCII text in a Swift Playground. 
+
+### Description:
+The task was to display a series of football-related ASCII images in order, with descriptions preceding each image. The ASCII art files (like the stadium, players, and goal) were stored in a resources folder, and the playground loads and displays them sequentially.
+
+### Features:
+- **Sequential display of ASCII images** representing a football match.
+- **Descriptions** are shown before each image, providing context.
+- **Images sourced from the resources folder**: ASCII files were loaded dynamically and displayed.
+- **Simple code structure**: Functions were used to read from text files and print ASCII art to the console.
+
+### What I Learned from the Project:
+- How to organize external resources (like `.txt` files) in an Xcode Playground.
+- Loading and displaying data (ASCII art) from external text files in Swift.
+- Using Swift functions to handle repetitive tasks such as displaying text and images in sequence.
