@@ -50,3 +50,17 @@ The task was to display a series of football-related ASCII images in order, with
 - How to organize external resources (like `.txt` files) in an Xcode Playground.
 - Loading and displaying data (ASCII art) from external text files in Swift.
 - Using Swift functions to handle repetitive tasks such as displaying text and images in sequence.
+
+
+# Week 3 - # Football Random Facts App
+
+## Overview
+The **Football Clubs and Random Facts App** is a simple SwiftUI-based application that displays random football facts and images for some of the most famous football clubs in the world. 
+
+## Features
+- **Random Fact Generation**: Each football club has a list of facts and corresponding images. When the user selects a club and presses the **"Generate Random Fact"** button, a random fact about the club is displayed alongside an image.
+- **Clubs Included**: The app includes the following football clubs:
+  - Chelsea
+  - Manchester United
+  - Liverpool
+  - Arsenal
