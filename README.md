@@ -64,3 +64,17 @@ The **Football Clubs and Random Facts App** is a simple SwiftUI-based applicatio
   - Manchester United
   - Liverpool
   - Arsenal
+ 
+# Week 4 - Football Trivia Game
+
+## Overview
+The **Football Trivia Game** is an application that challenges users with trivia questions related to both **club-level** and **international football**. 
+
+## Features
+- **Club and International Trivia**: The app offers two categories of trivia questions: **Club Level Trivia** and **International Level Trivia**. Users can select their preferred category from the home screen.
+- **Multiple-Choice Questions**: Each trivia question provides users with **four possible answers**. Users must select the correct answer to proceed to the next question.
+- **Images for Context**: Each trivia question is accompanied by an image relevant to the topic, enhancing user engagement.
+- **Countdown Timer**: A **15-second countdown timer** is displayed for each question, challenging users to respond quickly before time runs out.
+- **Correct and Incorrect Feedback**: Upon selecting an answer, the correct answer is highlighted in **green** and incorrect answers in **red**, giving immediate visual feedback.
+- **Game Over and Celebration Screens**: If a user answers all questions correctly, a **congratulations message** with a **confetti animation** is displayed. If the user runs out of time or selects an incorrect answer, they are presented with a **Game Over** message.
+- **Restart Option**: After completing the trivia (either by winning or losing), users are presented with an option to **restart** and play again.
