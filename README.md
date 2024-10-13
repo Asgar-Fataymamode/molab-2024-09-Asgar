@@ -78,3 +78,11 @@ The **Football Trivia Game** is an application that challenges users with trivia
 - **Correct and Incorrect Feedback**: Upon selecting an answer, the correct answer is highlighted in **green** and incorrect answers in **red**, giving immediate visual feedback.
 - **Game Over and Celebration Screens**: If a user answers all questions correctly, a **congratulations message** with a **confetti animation** is displayed. If the user runs out of time or selects an incorrect answer, they are presented with a **Game Over** message.
 - **Restart Option**: After completing the trivia (either by winning or losing), users are presented with an option to **restart** and play again.
+
+# Week 5 - Updated Football Trivia Game
+
+## Overview
+The **Football Trivia Game** is an application that challenges users with trivia questions related to both **club-level** and **international football**. 
+
+## Features
+- Improved Football Trivia Game, with high scores and achievements, showcasing data storage
