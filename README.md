@@ -87,12 +87,19 @@ The **Football Trivia Game** is an application that challenges users with trivia
 ## Features
 - Improved Football Trivia Game, with high scores and achievements, showcasing data storage
 
+# Week 6 - Updated Football Trivia Game
 
+## Features
+- Improved Football Trivia Game, with data storage dealing with JSON objects
+- Implemented a login system, where users log in with their usernames
+- The high scores of each user is saved, as well as the highest score achieved.
+- Whenever a user logs in, the latter can view his high score in a leaderboard compared to the scores achieved by everyone else
 
 # Week 7 - Football Diary
 
 ## Features
 - Allow users to create a digital album of football-related images and memories.
 - Users can upload football images, add descriptions, and apply image filters to customize each page of the album.
+- This project showcases image manipulation.
 - Users can also add new pages and delete existing ones in this football diary book.
 
