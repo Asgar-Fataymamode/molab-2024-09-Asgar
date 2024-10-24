@@ -86,3 +86,13 @@ The **Football Trivia Game** is an application that challenges users with trivia
 
 ## Features
 - Improved Football Trivia Game, with high scores and achievements, showcasing data storage
+
+
+
+# Week 7 - Football Diary
+
+## Features
+- Allow users to create a digital album of football-related images and memories.
+- Users can upload football images, add descriptions, and apply image filters to customize each page of the album.
+- Users can also add new pages and delete existing ones in this football diary book.
+
