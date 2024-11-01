@@ -10,11 +10,9 @@
 - renamed "True Depth" -> FaceMesh
 
 # --
+ 
+This app leverages face mesh technology to recognize and respond to various facial expressions in real-time. By identifying key expressions such as smiling, being angry, shocked, sad etc the app provides an interactive and fun experience by generating corresponding emojis on the screen. This dynamic emoji overlay feature allows users to see expressive emojis appear instantly as their facial expressions change, creating an engaging and entertaining experience.
 
-# Face Mesh with ARKit
- Learn how to use ARKit to detect and track the user's face
-
-![](facial-recognition-1.png)
 
 For the full tutorial, please refer to this link:
 
