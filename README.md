@@ -1,29 +1,25 @@
 # Week 1 - Football Match Simulation in Swift
 
-## Overview
-
+Overview:
 Over several hours this week (around **5 hours**), I have been learning the **Swift programming language**. Specifically, I've focused on understanding syntax, functions, and how to structure simple projects.
 
-### Resources I've Used:
+Resources I've Used:
 - [Swift Guided Tour Documentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)
 - [Quick Swift Tutorial by YouTube (CodeWithChris)](https://www.youtube.com/watch?v=n5X_V81OYnQ&t=604s&pp=ygUUc3dpZnQgcXVpY2sgdHV0b3JpYWw%3D)
 - [Another Swift Basics Video Tutorial (CodeWithChris)](https://www.youtube.com/watch?v=CwA1VWP0Ldw&pp=ygUUc3dpZnQgcXVpY2sgdHV0b3JpYWw%3D)
 
----
 
-## **Project: Football Match Simulation**
-
-### Description:
+Description:
 This project is a **Football Match Simulator** built in Swift using **Xcode Playground**. The project simulates a full football match where goals, fouls, and cards are randomly generated. The game tracks and displays the score in real-time and includes visual animations like goal celebrations and showing yellow or red cards for fouls.
 
-### Features:
+Features:
 - **Randomized match events**: goals, fouls, and no event occurrences.
 - **Displays the current score** after each goal.
 - **Goal celebration animation** with emojis.
 - **Yellow and red card display** for fouls.
 - **Real-time event simulation** with a delay.
 
-### What I Learned from the Project:
+What I Learned from the Project:
 - How to structure and organize a Swift project.
 - Handling arrays and looping through data structures to simulate events.
 - Using emojis to create fun animations within the console.
@@ -33,31 +29,29 @@ This project is a **Football Match Simulator** built in Swift using **Xcode Play
 
 # Week 2 - Football ASCII Image Display
 
-## Overview
+Overview: This week, I spent around **3 hours** continuing to learn **Swift**. I built upon the foundational knowledge I gained in Week 1 and applied it to a new project. This project focused on loading and displaying images created using ASCII text in a Swift Playground. 
 
-This week, I spent around **3 hours** continuing to learn **Swift**. I built upon the foundational knowledge I gained in Week 1 and applied it to a new project. This project focused on loading and displaying images created using ASCII text in a Swift Playground. 
-
-### Description:
+Description:
 The task was to display a series of football-related ASCII images in order, with descriptions preceding each image. The ASCII art files (like the stadium, players, and goal) were stored in a resources folder, and the playground loads and displays them sequentially.
 
-### Features:
+Features:
 - **Sequential display of ASCII images** representing a football match.
 - **Descriptions** are shown before each image, providing context.
 - **Images sourced from the resources folder**: ASCII files were loaded dynamically and displayed.
 - **Simple code structure**: Functions were used to read from text files and print ASCII art to the console.
 
-### What I Learned from the Project:
+What I Learned from the Project:
 - How to organize external resources (like `.txt` files) in an Xcode Playground.
 - Loading and displaying data (ASCII art) from external text files in Swift.
 - Using Swift functions to handle repetitive tasks such as displaying text and images in sequence.
 
 
-# Week 3 - # Football Random Facts App
+# Week 3 - Football Random Facts App
 
-## Overview
+Overview:
 The **Football Clubs and Random Facts App** is a simple SwiftUI-based application that displays random football facts and images for some of the most famous football clubs in the world. 
 
-## Features
+Features:
 - **Random Fact Generation**: Each football club has a list of facts and corresponding images. When the user selects a club and presses the **"Generate Random Fact"** button, a random fact about the club is displayed alongside an image.
 - **Clubs Included**: The app includes the following football clubs:
   - Chelsea
@@ -67,10 +61,10 @@ The **Football Clubs and Random Facts App** is a simple SwiftUI-based applicatio
  
 # Week 4 - Football Trivia Game
 
-## Overview
+Overview:
 The **Football Trivia Game** is an application that challenges users with trivia questions related to both **club-level** and **international football**. 
 
-## Features
+Features:
 - **Club and International Trivia**: The app offers two categories of trivia questions: **Club Level Trivia** and **International Level Trivia**. Users can select their preferred category from the home screen.
 - **Multiple-Choice Questions**: Each trivia question provides users with **four possible answers**. Users must select the correct answer to proceed to the next question.
 - **Images for Context**: Each trivia question is accompanied by an image relevant to the topic, enhancing user engagement.
@@ -79,17 +73,17 @@ The **Football Trivia Game** is an application that challenges users with trivia
 - **Game Over and Celebration Screens**: If a user answers all questions correctly, a **congratulations message** with a **confetti animation** is displayed. If the user runs out of time or selects an incorrect answer, they are presented with a **Game Over** message.
 - **Restart Option**: After completing the trivia (either by winning or losing), users are presented with an option to **restart** and play again.
 
-# Week 5 - Updated Football Trivia Game
+# Week 5 - Updated Football Trivia Game (Version 2)
 
-## Overview
+Overview:
 The **Football Trivia Game** is an application that challenges users with trivia questions related to both **club-level** and **international football**. 
 
-## Features
+Features:
 - Improved Football Trivia Game, with high scores and achievements, showcasing data storage
 
-# Week 6 - Updated Football Trivia Game
+# Week 6 - Updated Football Trivia Game (Version 3)
 
-## Features
+Features
 - Improved Football Trivia Game, with data storage dealing with JSON objects
 - Implemented a login system, where users log in with their usernames
 - The high scores of each user is saved, as well as the highest score achieved.
@@ -97,9 +91,17 @@ The **Football Trivia Game** is an application that challenges users with trivia
 
 # Week 7 - Football Diary
 
-## Features
+Features
 - Allow users to create a digital album of football-related images and memories.
 - Users can upload football images, add descriptions, and apply image filters to customize each page of the album.
 - This project showcases image manipulation.
 - Users can also add new pages and delete existing ones in this football diary book.
+
+
+
+# Week 8 - ExpressEmojis
+
+Features:
+This app leverages face mesh technology to recognize and respond to various facial expressions in real-time. By identifying key expressions such as smiling, being angry, shocked, sad etc the app provides an interactive and fun experience by generating corresponding emojis on the screen. This dynamic emoji overlay feature allows users to see expressive emojis appear instantly as their facial expressions change, creating an engaging and entertaining experience.
+
 
