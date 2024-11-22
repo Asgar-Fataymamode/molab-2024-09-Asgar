@@ -211,6 +211,15 @@ Leaderboard
 
 ![leaderboard](https://github.com/Asgar-Fataymamode/molab-2024-09-Asgar/blob/main/Week%2010/Images/leaderboard.png)
 
+List of skills we can learn
+
+![skills](https://github.com/Asgar-Fataymamode/molab-2024-09-Asgar/blob/main/Week%2010/Images/SkillsList.png)
+
+
+Example of one skill
+
+![skill]([https://github.com/Asgar-Fataymamode/molab-2024-09-Asgar/blob/main/Week%2010/Images/SkillsList.png](https://github.com/Asgar-Fataymamode/molab-2024-09-Asgar/blob/main/Week%2010/Images/SkillEx.png))
+
 Profile
 
 ![profile](https://github.com/Asgar-Fataymamode/molab-2024-09-Asgar/blob/main/Week%2010/Images/profile.png)
