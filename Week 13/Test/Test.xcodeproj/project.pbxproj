@@ -25,6 +25,7 @@
 		781E148A2D017753004120EB /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E14892D01774E004120EB /* HomePageView.swift */; };
 		781E14952D018677004120EB /* GoalsChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E14942D018676004120EB /* GoalsChallengesView.swift */; };
 		78C151F32D034ECF005B89EB /* WeeklyActivitySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C151F22D034EC3005B89EB /* WeeklyActivitySummary.swift */; };
+		78C152222D035F81005B89EB /* SessionInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C152212D035F78005B89EB /* SessionInsightsView.swift */; };
 		78FCDE892D0261C300ED8828 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCDE882D0261BF00ED8828 /* AboutView.swift */; };
 		78FCDE8B2D0261DE00ED8828 /* RulesAndRegulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCDE8A2D0261D500ED8828 /* RulesAndRegulationsView.swift */; };
 		78FCDE8D2D02631600ED8828 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCDE8C2D02631100ED8828 /* EditProfileView.swift */; };
@@ -50,6 +51,7 @@
 		781E14892D01774E004120EB /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		781E14942D018676004120EB /* GoalsChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsChallengesView.swift; sourceTree = "<group>"; };
 		78C151F22D034EC3005B89EB /* WeeklyActivitySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyActivitySummary.swift; sourceTree = "<group>"; };
+		78C152212D035F78005B89EB /* SessionInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInsightsView.swift; sourceTree = "<group>"; };
 		78FCDE882D0261BF00ED8828 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		78FCDE8A2D0261D500ED8828 /* RulesAndRegulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesAndRegulationsView.swift; sourceTree = "<group>"; };
 		78FCDE8C2D02631100ED8828 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				781E14752D0139C6004120EB /* UserManager.swift */,
 				781E13F42D012DB8004120EB /* SignInView.swift */,
 				781E14942D018676004120EB /* GoalsChallengesView.swift */,
+				78C152212D035F78005B89EB /* SessionInsightsView.swift */,
 				781E14892D01774E004120EB /* HomePageView.swift */,
 				781E14772D013AB2004120EB /* Frameworks */,
 			);
@@ -218,6 +221,7 @@
 				781E147B2D0157A6004120EB /* HeightPicker.swift in Sources */,
 				781E148A2D017753004120EB /* HomePageView.swift in Sources */,
 				78FCDEC22D02775300ED8828 /* AddGoalView.swift in Sources */,
+				78C152222D035F81005B89EB /* SessionInsightsView.swift in Sources */,
 				781E147F2D0157DA004120EB /* DaySelectionView.swift in Sources */,
 				781E14812D015820004120EB /* PickerView.swift in Sources */,
 				78FCDEC42D02776B00ED8828 /* GoalDetailView.swift in Sources */,

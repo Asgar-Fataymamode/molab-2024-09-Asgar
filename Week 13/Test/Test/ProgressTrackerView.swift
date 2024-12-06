@@ -4,7 +4,7 @@
 ////
 ////  Created by Muhammad Ali Asgar Fataymamode on 05/12/2024.
 ////
-//
+////
 //import SwiftUI
 //
 //struct ProgressTrackerView: View {
@@ -171,3 +171,121 @@
 //        .padding(.horizontal, 20)
 //    }
 //}
+//
+//
+
+
+
+import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
+
+struct ProgressTrackerView: View {
+    @State private var trainedDays: [String] = []
+    private let db = Firestore.firestore()
+    private let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 30) {
+                    VStack {
+                        CircularProgressView(progress: 0.75, label: "75% Complete")
+                            .frame(width: 150, height: 150)
+                            .padding()
+                    }
+
+                    Divider()
+
+                    VStack(alignment: .leading) {
+                        Text("Activity Breakdown")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .center)
+
+                        HStack(spacing: 20) {
+                            CircularProgressView(progress: 0.8, label: "Shooting")
+                                .frame(width: 100, height: 100)
+                                .padding(.leading, 55)
+
+                            CircularProgressView(progress: 0.65, label: "Passing")
+                                .frame(width: 100, height: 100)
+
+                            CircularProgressView(progress: 0.6, label: "Dribbling")
+                                .frame(width: 100, height: 100)
+                        }
+                        .padding(.horizontal, 10)
+                    }
+
+                    Divider()
+
+                    WeeklyActivitySummaryView(trainedDays: trainedDays)
+
+                    Divider()
+
+                    SessionInsightsView()
+
+                    Spacer()
+                }
+                .padding()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Overall Training Progress")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+            }
+        }
+        .onAppear(perform: fetchUserTrainingDays)
+    }
+
+    private func fetchUserTrainingDays() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("User not logged in")
+            return
+        }
+
+        db.collection("users").document(userId).getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching user data: \(error.localizedDescription)")
+                return
+            }
+
+            guard let data = snapshot?.data(), let selectedDays = data["selectedDays"] as? [String] else {
+                print("No selectedDays found for the user")
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.trainedDays = selectedDays
+            }
+        }
+    }
+}
+
+struct CircularProgressView: View {
+    var progress: CGFloat
+    var label: String
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.gray.opacity(0.3), lineWidth: 10)
+            Circle()
+                .trim(from: 0, to: progress)
+                .stroke(Color.blue, lineWidth: 10)
+                .rotationEffect(.degrees(-90))
+                .animation(.easeOut, value: progress)
+
+            VStack {
+                Text(String(format: "%.0f%%", progress * 100))
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Text(label)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
+        }
+    }
+}

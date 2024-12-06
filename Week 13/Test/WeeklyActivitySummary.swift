@@ -1,31 +1,30 @@
-//
-//  WeeklyActivitySummary.swift
-//  Test
-//
-//  Created by Muhammad Ali Asgar Fataymamode on 06/12/2024.
-//
+////
+////  WeeklyActivitySummary.swift
+////  Test
+////
+////  Created by Muhammad Ali Asgar Fataymamode on 06/12/2024.
+////
 import SwiftUI
 
 struct WeeklyActivitySummaryView: View {
-    @Binding var trainedDays: [Bool]
-    @Binding var trainingDaysCount: Int
+    let trainedDays: [String]
 
-    private let daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"]
-    
+    private let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Weekly Activity Summary")
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .center)
-            
+
             HStack(spacing: 15) {
-                ForEach(0..<7, id: \.self) { index in
-                    WeeklyDayView(day: daysOfWeek[index], trained: trainedDays[index])
+                ForEach(daysOfWeek, id: \.self) { day in
+                    WeeklyDayView(day: day.prefix(1).uppercased(), trained: trainedDays.contains(day))
                 }
             }
             .padding()
-            
-            Text("\(trainingDaysCount) out of 7 days trained this week")
+
+            Text("To train \(trainedDays.count) out of 7 days this week")
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -33,5 +32,25 @@ struct WeeklyActivitySummaryView: View {
         .padding()
         .cornerRadius(10)
         .padding(.horizontal, 20)
+    }
+}
+
+struct WeeklyDayView: View {
+    let day: String
+    let trained: Bool
+
+    var body: some View {
+        VStack {
+            Circle()
+                .fill(trained ? Color.green : Color.gray.opacity(0.3))
+                .frame(width: 40, height: 40)
+                .overlay(Text(day)
+                            .font(.caption)
+                            .foregroundColor(.white))
+
+            Text(trained ? "✔︎" : "✘")
+                .font(.footnote)
+                .foregroundColor(trained ? .green : .gray)
+        }
     }
 }
