@@ -1,0 +1,326 @@
+
+
+
+//
+//  SignUpView.swift
+//  MasterKick
+//
+//  Created by Muhammad Ali Asgar Fataymamode on 14/11/2024.
+//
+
+
+
+import SwiftUI
+
+struct SignUpView: View {
+    @EnvironmentObject var userManager: UserManager  // Manage users
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var age: String = ""
+    @State private var country: String = ""
+    @State private var skillLevel: String = "Beginner"
+    @State private var preferredPosition: String = "Goalkeeper"
+    @State private var trainingGoals: String = ""
+    @State private var experience: String = ""
+    @State private var height: Double = 1.70
+    @State private var weight: Int = 70
+    @State private var selectedDays: [String] = []
+    @State private var trainingDuration: Int = 30
+    @State private var notificationPreference: String = "Daily"
+    @State private var profileImage: Image? = nil
+    @State private var showImagePicker: Bool = false
+    @State private var inputImage: UIImage?
+    @State private var showHeightPicker: Bool = false
+    @State private var showWeightPicker: Bool = false
+
+    let skillLevels = ["Beginner", "Intermediate", "Advanced"]
+    let preferredPositions = ["Goalkeeper", "Defender", "Midfielder", "Striker"]
+    let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let trainingDurations = [30, 60, 90, 120]
+    let notificationOptions = ["Daily", "Weekly", "Monthly", "None"]
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("Sign Up")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top, 20)
+
+                // Profile Picture Upload
+                VStack {
+                    if profileImage != nil {
+                        profileImage?
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                            .shadow(radius: 5)
+                    } else {
+                        Image(systemName: "person.crop.circle.fill.badge.plus")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
+                            .foregroundColor(.gray)
+                    }
+                    Button(action: {
+                        self.showImagePicker = true
+                    }) {
+                        Text("Upload Profile Picture")
+                    }
+                }
+                .padding()
+
+                // Username and Password Fields
+                Group {
+                    TextField("Username", text: $username)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+
+                    TextField("Age", text: $age)
+                        .keyboardType(.numberPad)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+
+                    TextField("Country", text: $country)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                }
+
+                // Height Picker
+                VStack {
+                    Text("Height (m)")
+                        .font(.headline)
+                    Text(String(format: "%.2f m", height))
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                        .onTapGesture {
+                            showHeightPicker.toggle()
+                        }
+
+                    if showHeightPicker {
+                        Picker("Height", selection: $height) {
+                            ForEach(Array(stride(from: 1.20, through: 2.50, by: 0.01)), id: \.self) { value in
+                                Text(String(format: "%.2f", value))
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(height: 100)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                    }
+                }
+
+                // Weight Picker
+                VStack {
+                    Text("Weight (kg)")
+                        .font(.headline)
+                    Text("\(weight) kg")
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                        .onTapGesture {
+                            showWeightPicker.toggle()
+                        }
+
+                    if showWeightPicker {
+                        Picker("Weight", selection: $weight) {
+                            ForEach(40...150, id: \.self) { value in
+                                Text("\(value) kg")
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(height: 100)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                    }
+                }
+
+                // Training Goals and Experience
+                Group {
+                    TextField("Training Goals", text: $trainingGoals)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+
+                    TextField("Experience", text: $experience)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                }
+
+//                // Preferred Training Days
+//                VStack {
+//                    Text("Preferred Training Days")
+//                        .font(.headline)
+//                    HStack {
+//                        ForEach(daysOfWeek, id: \.self) { day in
+//                            Button(action: {
+//                                toggleDaySelection(day: day)
+//                            }) {
+//                                Text(day.prefix(3))
+//                                    .padding()
+//                                    .background(selectedDays.contains(day) ? Color.blue : Color.gray.opacity(0.3))
+//                                    .foregroundColor(.white)
+//                                    .cornerRadius(5)
+//                            }
+//                        }
+//                    }
+//                }
+//                .padding(.horizontal, 20)
+                
+                
+                //                //Preferred Training Days
+                                VStack {
+                                    Text("Preferred Training Days")
+                                        .font(.headline)
+                                    HStack {
+                                        ForEach(daysOfWeek, id: \.self) { day in
+                                            Button(action: {
+                                                toggleDaySelection(day: day)
+                                            }) {
+                                                Text(day.prefix(3))
+                                                    .padding(8)
+                                                    .background(selectedDays.contains(day) ? Color.blue : Color.gray.opacity(0.3))
+                                                    .foregroundColor(.white)
+                                                    .cornerRadius(5)
+                                            }
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal, 20)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                          
+
+                // Skill Level Picker
+                VStack {
+                    Text("Skill Level")
+                        .font(.headline)
+                    Picker("Skill Level", selection: $skillLevel) {
+                        ForEach(skillLevels, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding(.horizontal, 20)
+
+                // Preferred Position Picker
+                VStack {
+                    Text("Preferred Position")
+                        .font(.headline)
+                    Picker("Preferred Position", selection: $preferredPosition) {
+                        ForEach(preferredPositions, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding(.horizontal, 20)
+
+                // Training Duration Picker
+                VStack {
+                    Text("Training Duration")
+                        .font(.headline)
+                    Picker("Training Duration", selection: $trainingDuration) {
+                        ForEach(trainingDurations, id: \.self) { duration in
+                            Text("\(duration) mins")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding(.horizontal, 20)
+
+                // Notification Preference Picker
+                VStack {
+                    Text("Notification Preference")
+                        .font(.headline)
+                    Picker("Notification Preference", selection: $notificationPreference) {
+                        ForEach(notificationOptions, id: \.self) { option in
+                            Text(option)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding(.horizontal, 20)
+
+                // Sign Up Button
+                Button(action: {
+                    handleSignUp()
+                }) {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal, 20)
+            }
+            .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
+            }
+        }
+        .navigationBarTitle("", displayMode: .inline)
+    }
+
+    private func handleSignUp() {
+        guard let ageInt = Int(age) else { return }
+        userManager.addUser(
+            username: username,
+            password: password,
+            age: ageInt,
+            country: country,
+            skillLevel: skillLevel,
+            preferredPosition: preferredPosition,
+            trainingGoals: trainingGoals,
+            experience: experience,
+            height: height,
+            weight: weight,
+            selectedDays: selectedDays,
+            trainingDuration: trainingDuration,
+            notificationPreference: notificationPreference
+        )
+    }
+
+    private func toggleDaySelection(day: String) {
+        if selectedDays.contains(day) {
+            selectedDays.removeAll { $0 == day }
+        } else {
+            selectedDays.append(day)
+        }
+    }
+
+    private func loadImage() {
+        guard let inputImage = inputImage else { return }
+        profileImage = Image(uiImage: inputImage)
+    }
+}
+
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
+            .environmentObject(UserManager())
+    }
+}
